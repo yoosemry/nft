@@ -1,0 +1,1376 @@
+@import url('https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&family=Work+Sans:wght@100;200;300;400;500;600;700;800;900&display=swap');
+
+*,
+*::before,
+*::after{
+    box-sizing: inherit;
+    padding: 0;
+    margin: 0;
+}
+
+:root{
+    --primary-bg-color:  #2B2B2B;
+    --secondary-bg-color:  #3B3B3B;
+    --text-primary : #fff;
+    --text-secondary : #858584;
+
+    --action-primary-color : #A259FF;
+    
+    --font-primary : 'Work Sans', sans-serif;
+    --font-secondary : 'Space Mono', monospace;
+}
+
+html{
+    font-size: 62.5%;
+    box-sizing: border-box;
+}
+
+body{
+
+    font-size: 1.6rem;
+    line-height: 1.6;
+    font-family: var(--font-primary);
+    background-color: var(--primary-bg-color);
+    color: var(--text-primary);
+    text-transform: capitalize;
+}
+
+.container{
+    
+    display: grid;
+    grid-template-rows: min-content;
+    grid-template-columns:[full-start] minmax(9rem, 1fr) [center-start] repeat(8, [col-start] minmax(min-content , 16rem ) [col-end]) [center-end] minmax(9rem, 1fr) [full-end];
+}
+
+
+/*--------------- UTILITIES CLASSESS ------------*/
+.mtb {
+    margin-top: 7rem !important;
+}
+
+/*  HEADING TEXT */
+h1,h2,h3,h4,h5{
+    font-family: var(--font-primary);
+}
+
+
+.heading-primary-1{
+    font-size: 6.7rem;
+    line-height: 7.73rem;
+    text-transform: capitalize;
+}
+
+.heading-primary-2{
+    font-size: 5.1rem;
+    text-transform: capitalize;
+}
+
+.heading-primary-3{
+    font-size: 3.8rem;
+    font-weight: 600;
+    line-height: 4.5rem;
+    text-transform: capitalize;
+}
+
+.heading-primary-4{
+    font-size: 2.8rem;
+    text-transform: capitalize;
+}
+.heading-primary-5{
+    font-size: 2.2rem;
+    font-weight: 600;
+    line-height: 3.08rem;
+    text-transform: capitalize;
+}
+
+.caption{
+    font-size: 1.2rem;
+}
+
+.heading-secondary-1{
+    font-size: 6.7rem;
+    line-height: 7.73rem;
+    font-family: var(--font-secondary);
+    text-transform: capitalize;
+
+}
+
+.heading-secondary-2{
+    font-size: 5.1rem;
+    font-family: var(--font-secondary);
+    text-transform: capitalize;
+}
+
+.heading-secondary-3{
+    font-size: 3.8rem;
+    font-family: var(--font-secondary);
+    text-transform: capitalize;
+}
+
+.heading-secondary-4{
+    font-size: 2.8rem;
+    font-family: var(--font-secondary);
+    text-transform: capitalize;
+}
+.heading-secondary-5{
+    font-size: 2.2ren;
+    font-family: var(--font-secondary);
+    text-transform: capitalize;
+    font-weight: 600;
+    line-height: 3.08rem;
+}
+
+.caption{
+    font-size: 1.2rem;
+}
+
+
+/*  BUTTONS STYLE */
+
+.btn-primary-lg,
+.btn-primary-md,
+.btn-primary-sm{
+    background-color: var(--action-primary-color);
+    color: #fff;
+    border-radius: 2rem; 
+    border: none;
+    cursor: pointer;
+}
+
+.btn-primary-lg{
+    height: 7.2rem;
+  
+}
+.btn-primary-md{
+    height: 6.8rem;
+    padding: .5rem 2.5rem;
+}
+
+.btn-primary-sm{
+    height: 4.8rem;
+}
+
+
+
+
+
+
+/*******  layouts of page  */
+
+
+/*------------- HEADER STYLING ------------*/
+.header{
+    
+    grid-column: full-start / full-end;
+    padding: 1.5rem;
+
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    margin: 2rem 0;
+}
+
+.header-logo{
+    cursor: pointer;
+    transform: translateX(3vw);
+}
+
+.header-list{
+   
+    display: flex;
+    justify-self: end;
+    align-items: center;
+    list-style: none;
+  
+}
+
+.header-list li {
+    margin: 0 2rem;
+}
+
+.header-list li a:link,
+.header-list li a:visited{
+    color: inherit;
+    text-decoration: none;
+    font-size: 1.6rem;
+    font-weight: 500;
+    
+}
+
+
+.header-list li:nth-of-type(4) > * {
+    margin: .5rem;
+}
+
+.header-list > li:nth-child(4){
+
+ display: flex;
+ justify-content: center;
+ align-items: center; 
+ transition: all .2s ease-in-out;
+}
+
+
+.header-list > li:nth-child(4) > img{
+    width: 2rem;
+    height: 2rem;
+}
+
+.header .menu{
+    display: none;
+}
+
+
+
+
+
+
+
+
+
+
+/*------------- HERO CONTENT STYLING ------------*/
+
+.hero-pic{
+    display: none;
+}
+.hero-content{
+    margin-top: 7rem;
+    margin-bottom: 7rem;
+    grid-column: col-start 1 / col-end 4;
+ 
+}
+
+.hero-content > p{
+    
+    font-size: 2.2rem;
+    font-weight: 400;
+    line-height: 160%;
+    color: inherit;
+    padding: 2vh 0;
+    text-transform: capitalize;
+}
+
+.hero-content button{
+    padding: .7rem 3.5rem;
+    display: flex;
+    align-items: center;
+    justify-items: center;
+    grid-column-gap: 1rem;
+    font-weight: 600;
+    margin:2rem 0;
+   
+}
+.hero-content button img{
+    width: 2rem;
+    height: 2rem;
+    transform: rotate(45deg);
+}
+
+.hero-content .widget{
+    display: grid;
+    grid-template-columns:  repeat(3, minmax(min-content, 1fr));
+    grid-template-rows: min-content;
+    margin-top: 3rem;
+    align-items: center;
+    justify-items: center;
+}
+
+.hero-content .widget > p{
+    font-size: 2.4rem;
+    line-height: 3.8rem;
+}
+
+/*------------- HERO PICTURE STYLING ------------*/
+.hero-picture{
+    margin-top: 7rem;
+    margin-bottom: 7rem;
+    grid-column: col-start 5 / col-end 8;
+    margin-left: 2vw;
+
+    display: flex;
+    flex-direction: column;
+    
+}
+
+.hero-picture > img{
+    max-width: 100%;
+    max-height: 40.1rem;
+}
+
+.hero-picture .space-walking{
+    background-color: var(--secondary-bg-color);
+    justify-self: start;
+    padding: 2rem;
+    border-radius: 0 0 1rem 1rem;
+  
+}
+
+.walking-title{
+    margin-bottom: 1rem;
+
+}
+.hero-picture .space-walking-info{
+    display: flex;
+    gap: 1rem;
+}
+
+.hero-picture .space-walking > .space-walking-info img{
+    width: 2rem;
+    height: 2rem;
+}
+
+
+/*------------- TRANDING STYLING ------------*/
+
+.trending{
+   
+    grid-column: col-start 2 / col-end 7;
+}
+
+.tranding-heading-section{
+    display: grid;
+    align-items: start;
+    justify-items: start;
+    grid-row-gap: 1rem;
+    
+}
+
+.tranding-subhead p{
+  font-size: 2rem;
+  line-height: 3.5rem;
+  font-weight: 400;
+  color: inherit;
+}
+
+
+.tranding-collection-card-row{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(25rem, 1fr));
+    grid-template-rows: min-content;
+    grid-gap: 2rem;
+    padding: 2rem 0;
+}
+
+
+.tranding-collection-card{
+    background-color: transparent;
+    margin-top: 2vh;
+   
+}
+
+
+
+.tranding-collection-card img{
+    max-width: 100%;
+    width: 100%;
+}
+
+.tranding-frame{
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    justify-items: center;
+    margin-bottom: 2vh;
+    grid-gap: 2rem;
+}
+
+.tranding-frame img{
+    width: 100%;
+}
+
+.tranding-frame span.tranding-sm-box{
+    background-color: var(--action-primary-color);
+    width: 100%;
+    height: 100%;
+    border-radius: 2rem;
+    display: grid;
+    align-items: center;
+    justify-items: center;
+    font-family: var(--font-secondary);
+    cursor: pointer;
+    font-weight: 600;
+}
+
+.tranding-artist-card{
+    margin-top: 1rem;
+   display: grid;
+   grid-template-columns: max-content 1fr;
+   grid-column-gap: 1rem;
+}
+
+.tranding-artist-card img{
+    width: 2.4rem;
+    height: 2.4rem;
+}
+
+
+
+/*------------- Top CREATERD STYLING ------------*/
+
+.top-creators{
+    
+    grid-column: col-start 2 / col-end 7;
+}
+
+.headin-section{
+   display: flex;
+   justify-content: space-between;
+   align-items: center;
+}
+
+.headin-section > button > img{
+    width: 2rem;
+    height: 2rem;
+    transform: rotate(45deg);
+    margin-right: .2vw;
+}
+.second-heading p {
+    margin-top: .8rem;
+    font-weight: 400;
+    font-size: 2.2rem;
+    line-height: 3.5rem;
+}
+
+.headin-section button{
+    justify-self: end;
+    padding: .3rem 3.5rem;
+    background-color: transparent !important;
+    border:2px solid  var(--action-primary-color);
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  
+}
+
+.btn-mobile{
+    display: none;
+}
+
+.artist-cards{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(23rem, 1fr));
+    grid-gap: 1.5rem;
+    margin-top: 7vh;
+}
+
+.artist-cards > .artist-card{
+    background-color: var(--secondary-bg-color);
+    border-radius: 2rem;
+    transition: .2s all ease-in;
+    
+}
+
+.artist-cards > .artist-card:hover{
+    transform: scale(.95);
+}
+
+.artist-card{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    
+}
+
+.artist-card  > * {
+    margin-bottom: 1rem;
+}
+
+.artist-card span.counter{
+    width: 3rem;
+    height: 3rem;
+    border-radius: 50%;
+    background-color: var(--primary-bg-color);
+    display: grid;
+    align-items: center;
+    justify-items: center;
+    position: absolute;
+    left: 1.5rem;
+    top: 1.5rem;
+    
+}
+
+.artist-card img{
+    margin-top: 3vh;
+}
+
+.artist-card .artist-info{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    align-items: center;
+    justify-items: center;
+    grid-column-gap: 1rem;
+}
+
+.artist-card .artist-info span.caption{
+    color: var(--text-secondary);
+}
+
+
+/*------------- category STYLING ------------*/
+.category{
+    
+    grid-column: col-start 2 / col-end 7;
+    margin: 7rem 0;
+}
+
+.category .category-box{
+    display: grid;
+    padding-top: 7rem;
+    grid-template-columns: repeat(auto-fit, minmax(20rem,1fr));
+    grid-gap: 2rem;
+
+}
+
+.category .category-box > div {
+    background-color: var(--secondary-bg-color);
+    height: 31.6rem;
+    border-radius: 2rem;
+    position: relative;
+    transition: .2s all ease-in;
+}
+.category .category-box > div:hover{
+    transform: scale(.95);
+}
+.category-img{
+    max-width: 100%;
+    filter: blur(.5rem);
+    border-radius: 2rem 2rem 0 0;
+    background-clip: border-box;
+    
+}
+
+.category-icon{
+    max-width: 10rem;
+    max-height: 10rem;
+   position: absolute;
+   left: 50%;
+   top: 40%;
+   transform: translate(-50% , -50%);
+}
+
+.category-title{
+    margin-left: 1rem;
+    margin-top: 1rem;
+    text-transform: capitalize;
+}
+
+
+
+
+/*------------- NFT  STYLING ------------*/
+
+.discover-nft{
+  
+    grid-column: col-start 2 / col-end 7;
+}
+
+.nft-cards{
+    display: grid;
+    grid-template-columns: repeat(auto-fit , minmax(30rem,1fr));
+    grid-gap: 2rem;
+    margin-top: 7vh;
+   
+}
+
+.nft-cards > .nft-card{
+    background-color: var(--secondary-bg-color);
+    border-radius: 2rem;
+    transition: .2s all ease-in;
+}
+
+.nft-card img{
+    max-width: 100%;
+    width: 100%;
+}
+.nft-cards > .nft-card:hover{
+    transform: scale(.95);
+}
+.nft-card > .nfd-info{
+    padding: 2rem;
+
+}
+
+.nft-card > .nfd-info h5{
+    margin-bottom: 1rem;
+}
+
+
+
+.nft-card .nfd-info > .nft-arts-name{
+   display: grid;
+   grid-template-columns: max-content min-content;
+   align-items: center;
+   grid-column-gap: 1rem;
+}
+
+.nft-card .nfd-info > .nft-arts-name img{
+    width: 2rem;
+    height: 2rem;
+}
+
+
+.nft-adiction-info{
+  display: flex;
+  justify-content: space-between;
+  margin-top: 1rem;
+  font-family: var(--font-secondary);
+  
+}
+
+.nft-adiction-name{
+    color: var(--text-secondary);
+    font-size: 1.2rem;
+    font-weight: 400;
+    line-height: 1.3rem;
+}
+
+.nft-adiction-price{
+    font-size: 1.6rem;
+    color: var(--text-primary);
+    font-weight: 400;
+    line-height: 2.2rem;
+    font-family: var(--font-primary);
+    margin-top: 1vh;
+}
+
+.nft-adiction-info > div span {
+    display: block;
+}
+
+
+
+/*------------- GALLERY  STYLING ------------*/
+
+.galery{
+    background-image: linear-gradient(180deg, rgba(162, 89, 255, 0) 0%, #A259FF 100%) ,url(./images/tranding/2.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    grid-column: full-start / full-end;
+    padding: 10rem;
+    
+}
+
+.gallery-box{
+    display: grid;
+    height: 70vh;
+    grid-template-columns: 1fr 1fr;
+    
+    align-items: center;
+    justify-content: center;
+    align-items: end;
+}
+
+.gallery-arts > * {
+    margin-top: 3rem;
+}
+
+.gallery-arts .gallert-arts-card {
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--secondary-bg-color);
+    max-width: 15rem;
+    padding: 1rem 2rem;
+    border-radius: 2rem;
+    
+    cursor: pointer;
+}
+
+
+.gallery-arts .gallert-arts-card img{
+    width: 2rem;
+    height: 2rem;
+}
+
+.btn-gallery{
+    border: none;
+    background-color: var(--text-primary);
+    color: var(--primary-bg-color);
+    font-weight: 600;
+    font-size: 1.6rem;
+    height: 6.7rem;
+    padding: 1rem 5rem;
+    border-radius: 2rem;
+    text-transform: capitalize;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    margin-top: 5vh;
+
+}
+
+.btn-gallery > * {
+    margin: 0 1rem;
+}
+
+.audiction-timer{
+   display: grid;
+   grid-template-columns: repeat(3, 1fr);
+    background: rgba(59, 59, 59, 0.5);
+    backdrop-filter: blur(5px);
+    border-radius: 2rem;
+    padding: 5rem;
+    grid-row-gap: 2rem;
+    max-width: 55rem;
+    transform: translateX(7vw);
+   
+}
+
+.audiction-timer p {
+    grid-column: 1 / -1;
+    
+}
+
+.audiction-timer .time{
+    font-family: var(--font-secondary);
+    font-weight: 700;
+    font-size: 3.8rem;
+    list-style: 4.5rem;
+    color: var(--text-primary);
+  
+}
+
+.timer{
+    text-align: center;
+}
+
+
+/*------------- HOW IS WORK  STYLING ------------*/
+.hows-work{
+    
+    grid-column: col-start 2 / col-end 7;
+}
+
+.work-cards{
+    display: grid;
+    grid-template-columns: repeat(auto-fit , minmax(30rem,1fr));
+    grid-gap: 2rem;
+    margin-top: 7vh;
+}
+
+.work-cards > .work-card{
+    
+    background-color: var(--secondary-bg-color);
+    border-radius: 2rem;
+    padding: 3rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    transition: .2s all ease-in;
+}
+
+.work-card img{
+    max-width: 100%;
+}
+.work-cards > .work-card:hover{
+    transform: scale(.95);
+}
+
+.work-card > .work-card-detailts{
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+   gap: 1rem;
+}
+
+.work-card > .work-card-detailts p{
+    text-align: center;
+    font-weight: 400;
+    font-size: 1.6rem;
+    line-height: 2.2rem;
+ }
+
+
+
+/*-------------JOIN  STYLING ------------*/
+.join{
+    background-color:var(--secondary-bg-color);
+    grid-column: col-start 2 / col-end 7;
+    border-radius: 2rem;
+    padding: 5rem;
+
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-column-gap: 2vw;
+}
+
+.join img{
+    max-width: 100%;
+    
+}
+
+
+.join-headline > * {
+    padding:  1vh;
+}
+
+.join-headline p{
+    font-weight: 400;
+    font-size: 2.2rem;
+    line-height: 3.5rem;
+    color: inherit;
+}
+
+
+.join-fom-subscribe {
+    max-width: 90%;
+    display: flex;
+    justify-content: space-between;
+    background-color: #fff;
+    height: 6.2rem;
+    max-width: 42.5rem;
+    margin-top: 3vh;
+    border-radius: 2rem;
+}
+
+.join-fom-subscribe .join-input{
+    border: none;
+    padding: 1rem 3rem;
+    text-transform: capitalize;
+    font-size: 1.6rem;
+    color: var(--secondary-bg-color);
+    font-weight: 500;
+    border-radius: 2rem;
+}
+.join-fom-subscribe .join-input:focus{
+    outline: none;
+}
+
+.btn-subscribe{
+    background-color: var(--action-primary-color);
+    border: none;
+    border-radius: 2rem;
+    padding: 0 4rem;
+    color: var(--text-primary);
+    font-size: 1.6rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    cursor: pointer;
+}
+ .btn-subscribe > * {
+    margin: 0 1rem;
+ }
+.btn-subscribe img{
+    width: 2rem;
+    height: 2rem;
+   
+}
+
+/*------------- FOOTER STYLING ------------*/
+.footer{
+    background-color: var(--secondary-bg-color);
+    grid-column: full-start / full-end;
+}
+
+.footer-info{
+    width: 65%;
+    margin: 5vh auto;
+    padding: 0 5rem;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(min-content, 30rem) );
+    grid-column-gap: 5rem;
+}
+
+.nft-marketplace-info > * {
+    margin-bottom: 2rem;
+}
+
+.footer-items{
+    display: flex;
+    gap: 2rem;
+}
+
+.footer-items > .list{
+    list-style: none;
+}
+
+
+.explore-footer .pages > * {
+    margin: 2rem;
+}
+
+.pragraph-footer{
+    font-weight: 400;
+    font-size: 1.6rem;
+    line-height: 2.2rem;
+    color: var(--text-secondary);
+}
+
+.footer-subscribe > * {
+    margin-bottom: 2rem;
+}
+
+
+.join-footer-subscribe {
+    max-width: 90%;
+    display: flex;
+    justify-content: space-between;
+    background-color: #fff;
+    height: 6.2rem;
+    max-width: 42.5rem;
+    margin-top: 3vh;
+    border-radius: 2rem;
+}
+
+.join-footer-subscribe .join-input{
+    border: none;
+    padding: 1rem 3rem;
+    text-transform: capitalize;
+    font-size: 1.6rem;
+    color: var(--secondary-bg-color);
+    font-weight: 500;
+    border-radius: 2rem;
+}
+.join-footer-subscribe .join-input:focus{
+    outline: none;
+}
+
+.btn-subscribe-footer{
+    background-color: var(--action-primary-color);
+    border: none;
+    border-radius: 2rem;
+    padding: 0 4rem;
+    color: var(--text-primary);
+    font-size: 1.6rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    cursor: pointer;
+}
+ .btn-subscribe > * {
+    margin: 0 1rem;
+ }
+.btn-subscribe img{
+    width: 2rem;
+    height: 2rem;
+   
+}
+
+
+
+/*---------------------------------- media query  ------------------------------------*/
+
+
+@media only screen and (max-width : 75em){
+
+    html{
+        font-size: 50%;
+    }
+    
+
+}
+
+@media only screen and (max-width : 62.5em){
+
+  .container{
+    
+    display: grid;
+    grid-template-rows: min-content;
+    grid-template-columns:[full-start] 1rem [center-start] repeat(8, [col-start] minmax(min-content , 16rem ) [col-end]) [center-end] 1rem [full-end];
+}
+    
+
+}
+
+/* 53em 848px */
+@media only screen and (max-width : 53em ){
+    
+ 
+    .hero-picture{
+       align-self: center;
+        justify-self: center;
+    }
+    .hero-picture img{
+        width: 33rem;
+    }
+
+
+    .tranding-collection-card:nth-child(3){
+        display: none;
+    }
+
+    .artist-card:nth-child(7),
+    .artist-card:nth-child(8),
+    .artist-card:nth-child(9),
+    .artist-card:nth-child(10),
+    .artist-card:nth-child(11),
+    .artist-card:nth-child(12){
+        display: none;
+    }
+
+    .nft-card:nth-child(3){
+        display: none;
+    }
+
+    .work-card:nth-child(3){
+        display: none;
+    }
+  
+
+
+
+ 
+
+
+    .mtb {
+        margin-top: 7rem !important;
+    }
+    
+ 
+    
+    .heading-primary-1{
+        font-size: 6rem;
+
+    }
+    
+    .heading-primary-2{
+        font-size: 4.6rem;
+   
+    }
+    
+    .heading-primary-3{
+        font-size: 3.5rem;
+  
+    }
+    
+    .heading-primary-4{
+        font-size: 2.5rem;
+  
+    }
+    .heading-primary-5{
+        font-size: 2rem;
+     
+    }
+    
+    .caption{
+        font-size: 1rem;
+    }
+    
+    .heading-secondary-1{
+        font-size: 6rem;
+  
+    
+    }
+    
+    .heading-secondary-2{
+        font-size: 4.6rem;
+   
+    }
+    
+    .heading-secondary-3{
+        font-size: 3.5rem;
+    
+    }
+    
+    .heading-secondary-4{
+        font-size: 2.5rem;
+  
+    }
+    .heading-secondary-5{
+        font-size: 2ren;
+  
+    }
+    
+    .caption{
+        font-size: 1rem;
+    }
+
+
+
+    .header{
+        display: flex;
+        justify-content: space-between;
+    }
+    .header ul{
+        display: none;
+    }
+
+    .header .menu{
+        display: block;
+        cursor: pointer;
+        margin-right: 2vw;
+    }
+
+
+    .hero-picture > img{
+        max-width: 100%;
+        max-height: 100%;
+    }
+   
+ 
+
+    /*------------- TRANDING STYLING ------------*/
+
+
+    .artist-cards{
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(33rem, 1fr));
+        grid-gap: 1.5rem;
+        margin-top: 7vh;
+       
+    }
+    .artist-card{
+        display: grid;
+        grid-template-columns: min-content 1fr;
+        padding: 1rem;
+         justify-items: start;
+         align-items: center;
+         grid-column-gap: 2rem;
+        position: relative;
+    }
+
+    .artist-card span.counter{
+        width: 3rem;
+        height: 3rem;
+        position: absolute;
+        left: 0rem;
+        top: 1rem;
+        z-index: 1;
+    }
+
+    .artist-card img{
+        grid-row: 1 / 3;
+        width: 6rem;
+        height: 6rem;
+        transform: translateY(-2rem);
+        
+    }
+
+    .artist-card h5{
+        grid-column: 2 / -1;
+      
+    }
+
+    .artist-card .artist-info{
+       
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+    
+
+
+
+   
+   
+
+
+
+    .footer{
+        padding: 5rem;
+    }
+
+    .footer-info{
+      display: flex;
+      flex-direction: column;
+      width: 100%;
+    }
+
+
+    .join-fom-subscribe{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        background-color: transparent;
+        margin-bottom: 5rem;
+    }
+
+    .join-fom-subscribe .join-input{
+        padding: 1.5rem;
+        width: 80%;
+    }
+
+    
+.btn-subscribe{
+    padding: 1.5rem;
+    margin-top: 1rem;
+    width: 80%;
+   display: grid;
+   grid-template-columns: min-content 1fr;
+}
+
+.btn-subscribe > * {
+    margin: 0 ;
+ }
+
+
+}
+
+
+@media only screen and (max-width : 37.5rem ){
+
+    .mtb {
+        margin-top: 7rem !important;
+    }
+    
+ 
+    
+    .heading-primary-1{
+        font-size: 5rem;
+
+    }
+    
+ 
+
+
+.hero-content{
+    grid-column: center-start / center-end;
+    margin: 5%;
+
+    display: grid;
+    grid-row-gap: 2rem;
+}
+
+.hero-content .widget{
+    grid-row: 4 / 5;
+    
+}
+
+.hero-content button{
+   width: 80%;
+    margin-top: 5rem;
+    justify-self: center;
+    align-self: center;
+   height: 55%;
+    
+  display: flex;
+  justify-content: center;
+   
+    
+}
+
+.hero-picture{
+  
+   display: none;
+}
+
+.hero-pic{
+    display: grid;
+    max-width: 100%;
+
+}
+
+.headin-section{
+    display: block;
+    margin: 0;
+   
+}
+
+.headin-section  button{
+    display: none;
+  
+}
+
+.second-heading{
+    display: flex;
+    flex-direction: column;
+  
+}
+
+ .tranding-collection-card:nth-child(2){
+        display: none;
+    }
+
+
+.btn-mobile{
+    display: block;
+    width: 100%;
+    height: 7rem;
+    padding: 1rem 3rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.btn-mobile >  img{
+    display: none;
+}
+
+.artist-cards{
+    margin: 5rem 0;
+}
+
+
+.join{
+    display: flex;
+    flex-direction: column;
+    width: 98%;
+    margin: 0 auto;
+    background-color: transparent;
+  
+}
+
+.join > * {
+    margin-top: 3rem;
+}
+
+.join-fom-subscribe .join-input{
+ 
+    width: 100%;
+}
+.btn-subscribe{
+
+    width: 100%;
+
+}
+
+
+
+}
+
+
+@media only screen and (max-width: 37.5em ){
+
+.header-logo{
+    max-width: 100%;
+}
+
+.hero-content h1{
+    font-size: 4rem;
+}
+
+.hero-content img{
+    width: 100%;
+}
+
+.gallery-box{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 5rem;
+    padding: 3rem;
+}
+
+
+
+
+.btn-gallery{
+    width: 100%;
+}
+
+.audiction-timer{
+    transform: translateX(0);
+}
+
+
+
+
+
+.join-footer-subscribe {
+    width: 100%;
+}
+
+}

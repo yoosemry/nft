@@ -1,0 +1,656 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="data:image/jpeg;base64,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" type="image/x-icon">
+    <link rel="stylesheet" href="style.css">
+    <title>Nft Responsive</title>
+</head>
+<body class="container">
+    <header class="header">
+
+        <img src="./images/logo.png" alt="logo" class="header-logo">
+
+        <ul class="header-list">
+            <li class="header-items">
+                <a href="#">Marketplace</a>
+            </li>
+            <li class="header-items">
+                <a href="#">Rankings</a>
+            </li>
+            <li class="header-items">
+                <a href="#">Connect a Wallet</a>
+            </li>
+            <li class="header-items btn-primary-md">
+               <img src="./images/icons/User.png" alt="rocket"> <a href="#">Sing Up</a>
+            </li>
+        </ul>
+
+        <img class="menu" src="./images/icons/List.png" alt="menu">
+        
+    </header>
+
+    
+
+        
+        <div class="hero-content">
+            <h1 class="heading-primary-1">Discover digital art & Collect NFTs</h1>
+            <p>NFT marketplace UI created with Anima for Figma. Collect, buy and sell art from more than 20k NFT artists.</p>
+            <img class="hero-pic" src="./images/hero-picture.png" alt="hero picture">
+            <button class="btn-primary-sm"> <img src="./images/icons/Rocket.png" alt="rocket"> Get Started</button>
+            
+            <div class="widget">
+                <div class="widget-sale">
+                    <h4 class="heading-secondary-4">240k+</h4>
+                    <p>Total Sale</p>
+                </div>
+                <div class="widget-sale">
+                    <h4 class="heading-secondary-4">100k+</h4>
+                    <p>Auctions</p>
+                </div>
+                <div class="widget-sale">
+                    <h4 class="heading-secondary-4">240k+</h4>
+                    <p>Articles</p>
+                </div>
+            </div>
+            
+        </div>
+        
+        <div class="hero-picture">
+            
+            <img src="./images/hero-picture.png" alt="hero picture">
+            
+            <div class="space-walking">
+                <h5 class="heading-primary-5 walking-title">Space Walking</h5>
+                <div class="space-walking-info"> <img src="./images/avators/14.png" alt="avator 14">
+                    <p class="caption">Animakid</p>
+                </div>
+            </div>
+            
+        </div>
+    
+
+    <section class="trending mtb">
+        
+        <div class="tranding-heading-section">
+            <h2 class="heading-primary-2">Trending Collection</h2>
+            <div class="tranding-subhead">
+                <p>Checkout our weekly updated trending collection.</p>
+            </div>
+
+        </div>
+
+        <div class="tranding-collection-card-row">
+            <div class="tranding-collection-card">
+                <img src="./images/tranding/1.png" alt="tranding">
+
+                <div class="tranding-frame">
+                    <img src="./images/tranding/4.png" alt="">
+                    <img src="./images/tranding/5.png" alt="">
+                    <span class="tranding-sm-box">1025+</span>
+                </div>
+                <div class="tranding-info">
+                    <h5 class="heading-primary-5">DSGN Animals</h5>
+                    <div class="tranding-artist-card">
+                        <img src="./images/tranding/4.png" alt="cat">
+                        <span class="caption">Mr-fox</span>
+                    </div>
+                </div>
+         
+            </div>
+            
+            <div class="tranding-collection-card">
+                <img src="./images/tranding/2.png" alt="tranding">
+
+                <div class="tranding-frame">
+                    <img src="./images/tranding/2.png" alt="">
+                    <img src="./images/tranding/2.png" alt="">
+                    <span class="tranding-sm-box">1025+</span>
+                </div>
+                <div class="tranding-info">
+                    <h5 class="heading-primary-5">Magic Mushrooms</h5>
+                    <div class="tranding-artist-card">
+                        <img src="./images/tranding/5.png" alt="cat">
+                        <span class="caption">Shroomie</span>
+                    </div>
+                </div>
+         
+            </div>
+
+            <div class="tranding-collection-card">
+                <img src="./images/tranding/3.png" alt="tranding">
+
+                <div class="tranding-frame">
+                    <img src="./images/tranding/3.png" alt="">
+                    <img src="./images/tranding/3.png" alt="">
+                    <span class="tranding-sm-box">1025+</span>
+                </div>
+                <div class="tranding-info">
+                    <h5 class="heading-primary-5">Disco Machines</h5>
+                    <div class="tranding-artist-card">
+                        <img src="./images/tranding/1.png" alt="cat">
+                        <span class="caption">BeKind2Robots</span>
+                    </div>
+                </div>
+         
+            </div>
+            
+           
+
+        </div>
+
+    </section>
+
+    <section class="top-creators mtb">
+
+        <div class="headin-section">
+
+            <div class="second-heading">
+            <h3 class="heading-primary-3">top creators</h3>
+            <p>Checkout Top Rated Creators on the NFT Marketplace</p>
+
+            </div>
+            <button class="btn-primary-sm"> <img  src="./images/icons/Rocket.png" alt="rocket"> Get Started</button>
+        </div>
+
+            <div class="artist-cards">
+
+                <div class="artist-card">
+                    <span class="counter">1</span>
+                    <img src="./images/avators/1.png" alt="avator">
+                    <h5 class="heading-primary-5">Keepitreal</h5>
+
+                    <div class="artist-info">
+                        <span class="caption">Total Sales :</span>
+                        <span>34.53 ETH</span>
+                    </div>
+            
+
+                </div>
+
+                <div class="artist-card">
+                    <span class="counter">2</span>
+                    <img src="./images/avators/2.png" alt="avator">
+                    <h5 class="heading-primary-5">Keepitreal</h5>
+
+                    <div class="artist-info">
+                        <span class="caption">Total Sales :</span>
+                        <span>34.53 ETH</span>
+                    </div>
+            
+
+                </div>
+
+                <div class="artist-card">
+                    <span class="counter">3</span>
+                    <img src="./images/avators/3.png" alt="avator">
+                    <h5 class="heading-primary-5">Keepitreal</h5>
+
+                    <div class="artist-info">
+                        <span class="caption">Total Sales :</span>
+                        <span>34.53 ETH</span>
+                    </div>
+            
+
+                </div>
+
+                <div class="artist-card">
+                    <span class="counter">4</span>
+                    <img src="./images/avators/4.png" alt="avator">
+                    <h5 class="heading-primary-5">Keepitreal</h5>
+
+                    <div class="artist-info">
+                        <span class="caption">Total Sales :</span>
+                        <span>34.53 ETH</span>
+                    </div>
+            
+
+                </div>
+
+                <div class="artist-card">
+                    <span class="counter">5</span>
+                    <img src="./images/avators/5.png" alt="avator">
+                    <h5 class="heading-primary-5">Keepitreal</h5>
+
+                    <div class="artist-info">
+                        <span class="caption">Total Sales :</span>
+                        <span>34.53 ETH</span>
+                    </div>
+            
+
+                </div>
+
+                <div class="artist-card">
+                    <span class="counter">6</span>
+                    <img src="./images/avators/6.png" alt="avator">
+                    <h5 class="heading-primary-5">Keepitreal</h5>
+
+                    <div class="artist-info">
+                        <span class="caption">Total Sales :</span>
+                        <span>34.53 ETH</span>
+                    </div>
+            
+
+                </div>
+
+                <div class="artist-card">
+                    <span class="counter">7</span>
+                    <img src="./images/avators/7.png" alt="avator">
+                    <h5 class="heading-primary-5">Keepitreal</h5>
+
+                    <div class="artist-info">
+                        <span class="caption">Total Sales :</span>
+                        <span>34.53 ETH</span>
+                    </div>
+            
+
+                </div>
+
+                <div class="artist-card">
+                    <span class="counter">8</span>
+                    <img src="./images/avators/8.png" alt="avator">
+                    <h5 class="heading-primary-5">Keepitreal</h5>
+
+                    <div class="artist-info">
+                        <span class="caption">Total Sales :</span>
+                        <span>34.53 ETH</span>
+                    </div>
+            
+
+                </div>
+
+                <div class="artist-card">
+                    <span class="counter">9</span>
+                    <img src="./images/avators/9.png" alt="avator">
+                    <h5 class="heading-primary-5">Keepitreal</h5>
+
+                    <div class="artist-info">
+                        <span class="caption">Total Sales :</span>
+                        <span>34.53 ETH</span>
+                    </div>
+            
+
+                </div>
+
+                <div class="artist-card">
+                    <span class="counter">10</span>
+                    <img src="./images/avators/10.png" alt="avator">
+                    <h5 class="heading-primary-5">Keepitreal</h5>
+
+                    <div class="artist-info">
+                        <span class="caption">Total Sales :</span>
+                        <span>34.53 ETH</span>
+                    </div>
+            
+
+                </div>
+
+                <div class="artist-card">
+                    <span class="counter">11</span>
+                    <img src="./images/avators/11.png" alt="avator">
+                    <h5 class="heading-primary-5">Keepitreal</h5>
+
+                    <div class="artist-info">
+                        <span class="caption">Total Sales :</span>
+                        <span>34.53 ETH</span>
+                    </div>
+            
+
+                </div>
+
+                <div class="artist-card">
+                    <span class="counter">12</span>
+                    <img src="./images/avators/12.png" alt="avator">
+                    <h5 class="heading-primary-5">Keepitreal</h5>
+
+                    <div class="artist-info">
+                        <span class="caption">Total Sales :</span>
+                        <span>34.53 ETH</span>
+                    </div>
+            
+
+                </div>
+            
+               
+
+            </div>
+
+            <button class="btn-primary-sm btn-mobile"> <img  src="./images/icons/Rocket.png" alt="rocket"> Get Started</button>
+
+    </section>
+
+    <section class="category">
+
+        <h3 class="heading-primary-3">Browse Categories</h3>
+
+        <div class="category-box">
+
+            <div>
+                <img class="category-img" src="./images/category/photos/8.png" alt="photo">
+                <img class="category-icon" src="/images/category/icons/PaintBrush.png" alt="">
+
+                <h5 class="heading-primary-5 category-title">Art</h5>
+            </div>
+
+            <div>
+                <img class="category-img" src="./images/category/photos/5.png" alt="photo">
+                <img class="category-icon" src="/images/category/icons/Swatches.png" alt="">
+
+                <h5 class="heading-primary-5 category-title">collectibles</h5>
+            </div>
+
+            <div>
+                <img class="category-img" src="./images/category/photos/1.png" alt="photo">
+                <img class="category-icon" src="/images/category/icons/MusicNotes.png" alt="">
+
+                <h5 class="heading-primary-5 category-title">music</h5>
+            </div>
+
+            <div>
+                <img class="category-img" src="./images/category/photos/2.png" alt="photo">
+                <img class="category-icon" src="/images/category/icons/Camera.png" alt="">
+
+                <h5 class="heading-primary-5 category-title">Photography</h5>
+            </div>
+
+            <div>
+                <img class="category-img" src="./images/category/photos/3.png" alt="photo">
+                <img class="category-icon" src="/images/category/icons/VideoCamera.png" alt="">
+
+                <h5 class="heading-primary-5 category-title">video</h5>
+            </div>
+
+            <div>
+                <img class="category-img" src="./images/category/photos/4.png" alt="photo">
+                <img class="category-icon" src="/images/category/icons/MagicWand.png" alt="">
+
+                <h5 class="heading-primary-5 category-title">utility</h5>
+            </div>
+
+            <div>
+                <img class="category-img" src="./images/category/photos/6.png" alt="photo">
+                <img class="category-icon" src="/images/category/icons/Basketball.png" alt="">
+
+                <h5 class="heading-primary-5 category-title">sports</h5>
+            </div>
+
+            <div>
+                <img class="category-img" src="./images/category/photos/7.png" alt="photo">
+                <img class="category-icon" src="/images/category/icons/Planet.png" alt="">
+
+                <h5 class="heading-primary-5 category-title">virtual worlds</h5>
+            </div>
+           
+            
+
+
+        </div>
+
+    </section>
+
+    <section class="discover-nft mtb">
+        
+        <div class="headin-section">
+
+            <div class="second-heading">
+            <h3 class="heading-primary-3">Discover More NFTs</h3>
+            <p>Explore new trending NFTs</p>
+
+            </div>
+            <button class="btn-primary-sm"> <img style="transform: rotate(0deg); margin-right: .3vw;" src="./images/icons/Eye.png" alt="rocket"> See All</button>
+        </div>
+
+        <div class="nft-cards">
+
+            <div class="nft-card">
+                <img src="./images/nft/1.png" alt="nft picture1">
+
+                <div class="nfd-info">
+                    <h5 class="heading-primary-5">Distant Galaxy</h5>
+                   <div class="nft-arts-name">
+                    <img src="/images/avators/11.png" alt="avator">
+                    <span>MoonDancer</span>
+                   </div>
+
+                   <div class="nft-adiction-info">
+
+                    <div>
+                        <span class="nft-adiction-name">Price</span>
+                        <span class="nft-adiction-price">1.63 ETH</span>
+                    </div>
+
+                    <div>
+                        <span class="nft-adiction-name">Highest Bid</span>
+                        <span class="nft-adiction-price">0.33 wETH</span>
+                    </div>
+
+                </div>
+                </div>
+           
+
+              
+            </div>
+
+            <div class="nft-card">
+                <img src="./images/nft/2.png" alt="nft picture1">
+
+                <div class="nfd-info">
+                    <h5 class="heading-primary-5">Distant Galaxy</h5>
+                   <div class="nft-arts-name">
+                    <img src="/images/avators/11.png" alt="avator">
+                    <span>MoonDancer</span>
+                   </div>
+
+                   <div class="nft-adiction-info">
+
+                    <div>
+                        <span class="nft-adiction-name">Price</span>
+                        <span class="nft-adiction-price">1.63 ETH</span>
+                    </div>
+
+                    <div>
+                        <span class="nft-adiction-name">Highest Bid</span>
+                        <span class="nft-adiction-price">0.33 wETH</span>
+                    </div>
+
+                </div>
+                </div>
+           
+
+              
+            </div>
+
+
+            <div class="nft-card">
+                <img src="./images/nft/3.png" alt="nft picture1">
+
+                <div class="nfd-info">
+                    <h5 class="heading-primary-5">Distant Galaxy</h5>
+                   <div class="nft-arts-name">
+                    <img src="/images/avators/11.png" alt="avator">
+                    <span>MoonDancer</span>
+                   </div>
+
+                   <div class="nft-adiction-info">
+
+                    <div>
+                        <span class="nft-adiction-name">Price</span>
+                        <span class="nft-adiction-price">1.63 ETH</span>
+                    </div>
+
+                    <div>
+                        <span class="nft-adiction-name">Highest Bid</span>
+                        <span class="nft-adiction-price">0.33 wETH</span>
+                    </div>
+
+                </div>
+                </div>
+           
+
+              
+            </div>
+
+
+       
+
+        </div>
+
+        <button style="margin-top: 3.5rem;" class="btn-primary-sm btn-mobile"> <img  src="./images/icons/Rocket.png" alt="rocket">See All</button>
+
+
+    </section>
+
+    <div class="galery mtb">
+        
+        <div class="gallery-box">
+
+            <div class="gallery-arts">
+
+                <div class="gallert-arts-card">
+
+                    <img src="./images/avators/2.png" alt="avators">
+                    <span class="caption">Shroomie</span>
+
+                </div>
+
+                <h3 class="heading-primary-3">Magic Mashrooms</h3>
+                 <button class="btn-gallery"> <img src="./images/Eye.png" alt="rocket"> See NFT</button>
+            </div>
+
+
+            <div class="audiction-timer">
+
+                <p class="pragraph-footer">Auction ends in: </p>
+               
+
+                    <div class="timer">
+                        <p class="time">59:</p>
+                        <p class="caption">Hours</p>
+                    </div>
+                    <div class="timer">
+                        <p class="time">59:</p>
+                        <p class="caption">Minutes</p>
+                    </div>
+                    <div class="timer">
+                        <p class="time">59</p>
+                        <p class="caption">Seconds</p>
+                    </div>
+               
+            </div>
+        </div>
+
+    </div>
+
+    <section class="hows-work mtb">
+        <div class="headin-section ">
+
+            <div class="second-heading">
+            <h3 class="heading-primary-3">Discover More NFTs</h3>
+            <p>Explore new trending NFTs</p>
+
+            </div>
+           
+        </div>
+
+        <div class="work-cards">
+
+            <div class="work-card">
+               <img src="./images/cards/Setup Wallet Icon.png" alt="card1">
+               <div class="work-card-detailts">
+                <h5 class="heading-primary-5">Setup Your wallet</h5>
+                <p>Set up your wallet of choice. Connect it to the Animarket by clicking the wallet icon in the top right corner.</p>
+               </div>
+            </div>
+           
+            <div class="work-card">
+                <img src="./images/cards/Create Collection Icon.png" alt="card1">
+                <div class="work-card-detailts">
+                 <h5 class="heading-primary-5">Create Collection</h5>
+                 <p>Upload your work and setup your collection. Add a description, social links and floor price.</p>
+                </div>
+             </div>
+
+             <div class="work-card">
+                <img src="./images/cards/Start Earning Icon.png" alt="card1">
+                <div class="work-card-detailts">
+                 <h5 class="heading-primary-5">Start Earning</h5>
+                 <p>Choose between auctions and fixed-price listings. Start earning by selling your NFTs or trading others.</p>
+                </div>
+             </div>
+        </div>
+
+
+    </section>
+
+    <section class="join mtb">
+      <img src="./images/Photo.png" alt="photo">
+      <div class="subscribe-widget">
+        <div class="join-headline">
+
+            <h3 class="heading-primary-3">Join our weekly <br> digest</h3>
+            <p>Get exclusive promotions & updates straight to your inbox.</p>
+        </div>
+
+        <div class="join-fom-subscribe">
+            <input class="join-input" type="text" placeholder="Enter Your Email">
+            <button class="btn-subscribe"> <img src="./images/icons/EnvelopeSimple.png" alt=""> Subscribe</button>
+        </div>
+      </div>
+    </section>
+
+    <footer class="footer mtb">
+
+       <div class="footer-info">
+
+        <div class="nft-marketplace-info">
+
+            <img src="./images/logo footer.png" alt="footer logo">
+
+           <p class="pragraph-footer">
+            NFT marketplace UI created with Anima for Figma.
+           </p>
+
+           <p class="pragraph-footer">Join our community</p>
+           <ul class="footer-items">
+            <li class="list"><a href="#"><img src="./images/social/DiscordLogo.png" alt="discord"></a></li>
+            <li class="list"><a href="#"><img src="./images/social/YoutubeLogo.png" alt="youtube"></a></li>
+            <li class="list"><a href="#"><img src="./images/social/InstagramLogo.png" alt="instagram"></a></li>
+            <li class="list"><a href="#"><img src="./images/social/TwitterLogo.png" alt="twitter"></a></li>
+        </ul>
+
+        </div>
+
+
+        <div class="explore-footer">
+
+            <h5 class="heading-secondary-5">Explore</h5>
+
+            <div class="pages">
+
+                <p class="pragraph-footer">Marketplace</p>
+                <p class="pragraph-footer">Rankings</p>
+                <p class="pragraph-footer">Marketplace</p>
+ 
+            </div>
+
+        </div>
+
+        <div class="footer-subscribe">
+            <h5 class="heading-secondary-5">Join our weekly digest</h5>
+            <p class="pragraph-footer">Get exclusive promotions & updates straight to your inbox.</p>
+
+            <div class="join-footer-subscribe">
+                <input class="join-input" type="text" placeholder="Enter Your Email">
+                <button class="btn-subscribe-footer"> Subscribe</button>
+            </div>
+        </div>
+        
+
+       </div>
+
+
+    </footer>
+</body>
+</html>
